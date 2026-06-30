@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Random Character</title>
+
+<style>
+html,body{
+    margin:0;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#181818;
+    color:#fff;
+    font-family:Arial,sans-serif;
+}
+
+.container{
+    text-align:center;
+}
+
+img{
+    width:120px;
+    animation:spin .8s linear infinite;
+}
+
+p{
+    margin-top:16px;
+    opacity:.8;
+    font-size:18px;
+}
+
+@keyframes spin{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <img src="https://images.artfight.net/2026/T_SmallO.png" alt="Loading">
+    <p>Choosing a random character...</p>
+</div>
+
+<script>
+const characters = [
+"https://artfight.net/character/4410336.jillyan-ash",
+"https://artfight.net/character/8787971.gerta-beissend",
+"https://artfight.net/character/9695893.turtle-tide",
+"https://artfight.net/character/7517419.rayden-ravenheart",
+"https://artfight.net/character/9773182.mossy-glade"
+];
+
+const random = Math.floor(Math.random() * characters.length);
+
+// Небольшая задержка, чтобы успела показаться анимация
+setTimeout(() => {
+    window.location.replace(characters[random]);
+}, 600);
+</script>
+
+</body>
+</html>
